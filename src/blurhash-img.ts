@@ -1,6 +1,14 @@
-import {html, css, LitElement, property, query} from 'lit-element';
+import {
+  html,
+  css,
+  customElement,
+  LitElement,
+  property,
+  query,
+} from 'lit-element';
 import {decode} from 'blurhash';
 
+@customElement('blurhash-img')
 export class BlurhashImg extends LitElement {
   /* Layout notes:
    * Behaves similarly to a blockified image, where you set
@@ -73,7 +81,7 @@ export class BlurhashImg extends LitElement {
       <div class="wrapper">
         <canvas
           id="canvas"
-          width=${this.resolutionX}
+          width="${this.resolutionX}"
           height="${this.resolutionY}"
         ></canvas>
       </div>

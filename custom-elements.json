@@ -4,25 +4,45 @@
     {
       "name": "blurhash-img",
       "path": "./src/blurhash-img.ts",
-      "description": "Component that decodes a blurhash into an image.",
       "attributes": [
         {
           "name": "hash",
-          "description": "The blurhash representation of the image",
-          "type": "string",
-          "default": ""
+          "type": "string | undefined"
+        },
+        {
+          "name": "resolutionX",
+          "type": "number",
+          "default": "32"
+        },
+        {
+          "name": "resolutionY",
+          "type": "number",
+          "default": "32"
         }
       ],
       "properties": [
         {
           "name": "hash",
-          "description": "The blurhash representation of the image",
-          "type": "string",
-          "default": ""
+          "attribute": "hash",
+          "type": "string | undefined"
+        },
+        {
+          "name": "resolutionX",
+          "attribute": "resolutionX",
+          "type": "number",
+          "default": "32"
+        },
+        {
+          "name": "resolutionY",
+          "attribute": "resolutionY",
+          "type": "number",
+          "default": "32"
+        },
+        {
+          "name": "canvas",
+          "type": "HTMLCanvasElement | undefined"
         }
-      ],
-      "slots": [],
-      "cssParts": []
+      ]
     }
   ]
 }

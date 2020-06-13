@@ -16,11 +16,12 @@ import filesize from 'rollup-plugin-filesize';
 import {terser} from 'rollup-plugin-terser';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-  input: 'my-element.js',
+  input: 'blurhash-img.js',
   output: {
-    file: 'my-element.bundled.js',
+    file: 'blurhash-img.bundled.js',
     format: 'esm',
   },
   onwarn(warning) {
@@ -31,6 +32,8 @@ export default {
   plugins: [
     replace({'Reflect.decorate': 'undefined'}),
     resolve(),
+    // Allow resolving CommonJS modules
+    commonjs(),
     terser({
       module: true,
       warnings: true,
