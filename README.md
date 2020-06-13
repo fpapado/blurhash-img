@@ -1,8 +1,61 @@
-# LitElement TypeScript starter 
+# blurhash-img
 
-This project includes a sample component using LitElement with TypeScript.
+A Web Component for decoding [blurhash hashes](https://github.com/woltapp/blurhash) onto a canvas.
 
-## Setup
+## Usage
+
+This component is currently not bundled. If you are using a bundler, the dependencies for this component must also be bundled.
+
+Install the component:
+
+```shell
+npm install blurhash-img
+```
+
+### Using in HTML
+
+You can set the `hash` attribute in HTML.
+
+```html
+<blurhash-img hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"></blurhash-img>
+```
+
+Note that by default blurhash-img fills the width and height of the container, so you must set a width and height via CSS.
+
+```css
+blurhash-img {
+  width: 600px;
+  height: 400px;
+}
+```
+
+As a Web Component, you must decide when to register it.
+
+### Registering with JavaScript
+
+You can register the component via the customElements.define method.
+
+```js
+import {BlurhashImg} from 'blurhash-img';
+
+window.customElements.define('blurhash-img', BlurhashImg);
+```
+
+### Using with declarative rendering libraries
+
+`<blurhash-img>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html
+
+```js
+import {html, render} from 'lit-html';
+
+const hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ";
+
+render(html`
+  <blurhash-img .hash="${hash}"></blurhash-img>
+`, document.body);
+```
+
+## Development Setup
 
 Install dependencies:
 

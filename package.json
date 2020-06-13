@@ -31,10 +31,10 @@
   "keywords": [
     "web-components",
     "lit-element",
-    "typescript"
+    "blurhash"
   ],
-  "author": "The Polymer Authors",
-  "license": "BSD-3-Clause",
+  "author": "Fotis Papadogeorgopoulos (fotis@fpapado.com)",
+  "license": "MIT",
   "dependencies": {
     "blurhash": "^1.1.3",
     "lit-element": "^2.3.1"
