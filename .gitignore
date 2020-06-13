@@ -1,0 +1,9 @@
+/node_modules/
+/lib/
+/test/
+
+# top level source
+blurhash-img.js
+blurhash-img.js.map
+blurhash-img.d.ts
+blurhash-img.d.ts.map

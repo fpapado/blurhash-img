@@ -1,0 +1,28 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "blurhash-img",
+      "path": "./src/blurhash-img.ts",
+      "description": "Component that decodes a blurhash into an image.",
+      "attributes": [
+        {
+          "name": "hash",
+          "description": "The blurhash representation of the image",
+          "type": "string",
+          "default": ""
+        }
+      ],
+      "properties": [
+        {
+          "name": "hash",
+          "description": "The blurhash representation of the image",
+          "type": "string",
+          "default": ""
+        }
+      ],
+      "slots": [],
+      "cssParts": []
+    }
+  ]
+}
