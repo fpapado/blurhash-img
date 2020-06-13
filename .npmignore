@@ -1,0 +1,7 @@
+docs/
+docs-src/
+dev/
+karma.conf.cjs
+.eleventy.cjs
+.eslintrc.json
+.prettierrc.json
