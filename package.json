@@ -1,6 +1,6 @@
 {
   "name": "blurhash-img",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Web Component for decoding blurhash strings onto a canvas.",
   "main": "dist/blurhash-img.js",
   "module": "dist/blurhash-img.js",
