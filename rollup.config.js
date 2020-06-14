@@ -19,7 +19,7 @@ import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-  input: 'blurhash-img.js',
+  input: 'dist/blurhash-img.js',
   output: {
     file: 'blurhash-img.bundled.js',
     format: 'esm',

@@ -7,15 +7,18 @@
       "attributes": [
         {
           "name": "hash",
+          "description": "The encoded blurhash, as a string.",
           "type": "string | undefined"
         },
         {
           "name": "resolutionX",
+          "description": "The X-axis resolution in which the decoded image will be rendered at. Recommended min. 32px. Large sizes (>128px) will greatly decrease rendering performance.",
           "type": "number",
           "default": "32"
         },
         {
           "name": "resolutionY",
+          "description": "The Y-axis resolution in which the decoded image will be rendered at. Recommended min. 32px. Large sizes (>128px) will greatly decrease rendering performance.",
           "type": "number",
           "default": "32"
         }
@@ -24,17 +27,20 @@
         {
           "name": "hash",
           "attribute": "hash",
+          "description": "The encoded blurhash, as a string.",
           "type": "string | undefined"
         },
         {
           "name": "resolutionX",
           "attribute": "resolutionX",
+          "description": "The X-axis resolution in which the decoded image will be rendered at. Recommended min. 32px. Large sizes (>128px) will greatly decrease rendering performance.",
           "type": "number",
           "default": "32"
         },
         {
           "name": "resolutionY",
           "attribute": "resolutionY",
+          "description": "The Y-axis resolution in which the decoded image will be rendered at. Recommended min. 32px. Large sizes (>128px) will greatly decrease rendering performance.",
           "type": "number",
           "default": "32"
         },

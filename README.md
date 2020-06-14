@@ -31,6 +31,22 @@ blurhash-img {
 
 As a Web Component, you must decide when to register it.
 
+### Registering with script tags
+
+In an HTML page:
+
+```html
+<script type="module">
+import './path-to/some-package-name/some-component.js';
+</script>
+```
+
+Or:
+
+```html
+<script type="module" src="./path-to/some-package-name/some-component.js"></script>
+```
+
 ### Registering with JavaScript
 
 You can register the component via the customElements.define method.
@@ -39,6 +55,16 @@ You can register the component via the customElements.define method.
 import {BlurhashImg} from 'blurhash-img';
 
 window.customElements.define('blurhash-img', BlurhashImg);
+```
+
+Or:
+
+Import the package directly, for `.define` to run by itself
+
+In a JavaScript module:
+
+```js
+import 'blurhash-img';
 ```
 
 ### Using with declarative rendering libraries

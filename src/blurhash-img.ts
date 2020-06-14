@@ -36,13 +36,24 @@ export class BlurhashImg extends LitElement {
     }
   `;
 
+  /**
+   * The encoded blurhash, as a string.
+   */
   @property({type: String}) hash: string | undefined;
+
+  /**
+   * The X-axis resolution in which the decoded image will be rendered at. Recommended min. 32px. Large sizes (>128px) will greatly decrease rendering performance.
+   */
   @property({type: Number}) resolutionX: number = 32;
+
+  /**
+   * The Y-axis resolution in which the decoded image will be rendered at. Recommended min. 32px. Large sizes (>128px) will greatly decrease rendering performance.
+   */
   @property({type: Number}) resolutionY: number = 32;
 
   @query('#canvas') canvas: HTMLCanvasElement | undefined;
 
-  async __updateCanvasImage() {
+  __updateCanvasImage() {
     if (this.hash) {
       try {
         const pixels = decode(this.hash, this.resolutionX, this.resolutionY);
@@ -54,8 +65,9 @@ export class BlurhashImg extends LitElement {
           this.resolutionY
         );
 
-        if (this.canvas) {
-          const ctx = this.canvas.getContext('2d');
+        const canvasEl = this.canvas;
+        if (canvasEl) {
+          const ctx = canvasEl.getContext('2d');
           if (ctx) {
             ctx.putImageData(imageData, 0, 0);
           }
@@ -71,7 +83,11 @@ export class BlurhashImg extends LitElement {
   }
 
   updated(changedProperties: Map<string, string>) {
-    if (changedProperties.get('hash')) {
+    if (
+      changedProperties.get('hash') ||
+      changedProperties.get('resolutionX') ||
+      changedProperties.get('resolutionY')
+    ) {
       this.__updateCanvasImage();
     }
   }
