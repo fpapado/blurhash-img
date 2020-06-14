@@ -5,3 +5,4 @@ karma.conf.cjs
 .eleventy.cjs
 .eslintrc.json
 .prettierrc.json
+dist/test/
