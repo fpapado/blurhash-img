@@ -1,5 +1,7 @@
 # blurhash-img
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/fpapado/blurhash-img)
+
 A Web Component for decoding [blurhash strings](https://github.com/woltapp/blurhash) onto a canvas.
 
 ## Usage
@@ -16,6 +18,22 @@ npm install blurhash-img
 
 You can set the `hash` attribute in HTML.
 
+<!--
+```
+<custom-element-demo>
+  <template>
+    <script type="module" src="https://unpkg.com/blurhash-img?module"></script>
+    <style>
+      blurhash-img {
+        width: 400px;
+        height: 300px;
+     }
+    </style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
 ```html
 <blurhash-img hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"></blurhash-img>
 ```
