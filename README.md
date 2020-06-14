@@ -1,6 +1,6 @@
 # blurhash-img
 
-A Web Component for decoding [blurhash hashes](https://github.com/woltapp/blurhash) onto a canvas.
+A Web Component for decoding [blurhash strings](https://github.com/woltapp/blurhash) onto a canvas.
 
 ## Usage
 
@@ -31,35 +31,28 @@ blurhash-img {
 
 As a Web Component, you must decide when to register it.
 
-### Registering with script tags
+### Registering with HTML script tags
 
-In an HTML page:
+In an HTML page, add the following script tag:
 
 ```html
 <script type="module">
-import './path-to/some-package-name/some-component.js';
+import './path-to-blurhash-img.js';
 </script>
 ```
 
 Or:
 
 ```html
-<script type="module" src="./path-to/some-package-name/some-component.js"></script>
+<script type="module" src="./path-to-blurhash-img.js"></script>
 ```
+
+For both of these cases, you need the full, qualified path to the script.
+This might be a pain to do manually, in which case consider registering with JavaScript, and/or using a bundler, like webpack or Rollup.
 
 ### Registering with JavaScript
 
-You can register the component via the customElements.define method.
-
-```js
-import {BlurhashImg} from 'blurhash-img';
-
-window.customElements.define('blurhash-img', BlurhashImg);
-```
-
-Or:
-
-Import the package directly, for `.define` to run by itself
+You can include this element in your JavaScript bundle, and it will register itself. Import the package directly, for `.define` to work.
 
 In a JavaScript module:
 
@@ -67,9 +60,21 @@ In a JavaScript module:
 import 'blurhash-img';
 ```
 
+Or:
+
+You can register the component manually via the customElements.define method. Due to how the custom elements registry works at the moment, you will need to create a subclass around the component.
+
+```js
+import {BlurhashImg} from 'blurhash-img';
+
+window.customElements.define('blurhash-img', class extends BlurhashImg{});
+```
+
 ### Using with declarative rendering libraries
 
-`<blurhash-img>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html
+`<blurhash-img>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html.
+
+Example for lit-html:
 
 ```js
 import {html, render} from 'lit-html';
@@ -79,6 +84,26 @@ const hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ";
 render(html`
   <blurhash-img .hash="${hash}"></blurhash-img>
 `, document.body);
+```
+
+### CDN
+
+npm CDNs like [unpkg.com]() can directly serve files that have been published to npm. This works great for standard JavaScript modules that the browser can load natively.
+
+Using a CDN might help you get started!
+
+For this element to work from unpkg.com specifically, you need to include the `?module` query parameter, which tells unpkg.com to rewrite "bare" module specificers to full URLs.
+
+#### HTML
+
+```html
+<script type="module" src="https://unpkg.com/blurhash-img?module"></script>
+```
+
+#### JavaScript
+
+```html
+import {BlurhashImg} from 'https://unpkg.com/blurhash-img?module';
 ```
 
 ## Development Setup
