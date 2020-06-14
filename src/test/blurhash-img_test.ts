@@ -10,26 +10,18 @@ suite('blurhash-img', () => {
   });
 
   test('renders with default values', async () => {
-    const el = await fixture(html`<blurhash-img></blurhash-img>`);
-    assert.shadowDom.equal(
-      el,
-      `
-      <h1>Hello, World!</h1>
-      <button part="button">Click Count: 0</button>
-      <slot></slot>
-    `
+    const el = await fixture(
+      html`<blurhash-img hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"></blurhash-img>`
     );
-  });
-
-  test('renders with a set name', async () => {
-    const el = await fixture(html`<blurhash-img hash="Test"></blurhash-img>`);
     assert.shadowDom.equal(
       el,
-      `
-      <h1>Hello, Test!</h1>
-      <button part="button">Click Count: 0</button>
-      <slot></slot>
-    `
+      `<div class="wrapper">
+        <canvas
+          id="canvas"
+          width="32"
+          height="32"
+        ></canvas>
+      </div>`
     );
   });
 });
