@@ -6,7 +6,7 @@ import {
   property,
   query,
 } from 'lit-element';
-import {decode} from 'blurhash';
+import {decode} from '@fpapado/blurhash';
 
 @customElement('blurhash-img')
 export class BlurhashImg extends LitElement {
