@@ -26,22 +26,18 @@
 </nav>
     <div id="main-wrapper">
       <main>
-        <h1>&lt;blurhash-img&gt;</h1>
-<p><code>&lt;blurhash-img&gt;</code> is an awesome element. It's a great introduction to building web components with LitElement, with nice documentation site as well.</p>
-<h2>As easy as HTML</h2>
-<section class="columns">
-  <div>
-<p><code>&lt;blurhash-img&gt;</code> is just an HTML element. You can it anywhere you can use HTML!</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blurhash-img</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blurhash-img</span><span class="token punctuation">></span></span></code></pre>
-  </div>
-  <div>
-<p><blurhash-img></blurhash-img></p>
-  </div>
-</section>
+        <style>
+blurhash-img {
+  width: 600px;
+  height: 400px;
+}
+</style>
+<h1>&lt;blurhash-img&gt;</h1>
+<p>A Web Component for decoding <a href="https://github.com/woltapp/blurhash">blurhash hashes</a> onto a canvas.</p>
 <h2>Configure with attributes</h2>
 <section class="columns">
   <div>
-<p><code>&lt;blurhash-img&gt;</code> can be configured with attributed in plain HTML.</p>
+<p><code>&lt;blurhash-img&gt;</code> is an HTML element, that can be configured with attributes in plain HTML.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blurhash-img</span> <span class="token attr-name">hash</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>L?H..]S5Rjaz?wR+f5fkIVV@t7fQ<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blurhash-img</span><span class="token punctuation">></span></span></code></pre>
   </div>
   <div>
@@ -52,7 +48,7 @@
 <section class="columns">
   <div>
 <p><code>&lt;blurhash-img&gt;</code> can be used with declarative rendering libraries like Angular, React, Vue, and lit-html</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>html<span class="token punctuation">,</span> render<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'lit-html'</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> name<span class="token operator">=</span><span class="token string">"lit-html"</span><span class="token punctuation">;</span><br><br><span class="token function">render</span><span class="token punctuation">(</span>html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>  &lt;h2>This is a &amp;lt;blurhash-img&amp;gt;&lt;/h2><br>  &lt;blurhash-img .hash="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>hash<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">">&lt;/blurhash-img><br></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>html<span class="token punctuation">,</span> render<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'lit-html'</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> hash <span class="token operator">=</span> <span class="token string">"L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"</span><span class="token punctuation">;</span><br><br><span class="token function">render</span><span class="token punctuation">(</span>html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>  &lt;h2>This is a &amp;lt;blurhash-img&amp;gt;&lt;/h2><br>  &lt;blurhash-img .hash="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>hash<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">">&lt;/blurhash-img><br></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
   </div>
   <div>
 <h2>This is a &lt;blurhash-img&gt;</h2>

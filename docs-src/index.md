@@ -3,35 +3,23 @@ layout: page.11ty.cjs
 title: <blurhash-img> ⌲ Home
 ---
 
+<style>
+blurhash-img {
+  width: 600px;
+  height: 400px;
+}
+</style>
+
 # &lt;blurhash-img>
 
-`<blurhash-img>` is an awesome element. It's a great introduction to building web components with LitElement, with nice documentation site as well.
-
-## As easy as HTML
-
-<section class="columns">
-  <div>
-
-`<blurhash-img>` is just an HTML element. You can it anywhere you can use HTML!
-
-```html
-<blurhash-img></blurhash-img>
-```
-
-  </div>
-  <div>
-
-<blurhash-img></blurhash-img>
-
-  </div>
-</section>
+A Web Component for decoding [blurhash hashes](https://github.com/woltapp/blurhash) onto a canvas.
 
 ## Configure with attributes
 
 <section class="columns">
   <div>
 
-`<blurhash-img>` can be configured with attributes in plain HTML.
+`<blurhash-img>` is an HTML element, that can be configured with attributes in plain HTML.
 
 ```html
 <blurhash-img hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"></blurhash-img>
@@ -55,7 +43,7 @@ title: <blurhash-img> ⌲ Home
 ```js
 import {html, render} from 'lit-html';
 
-const name="lit-html";
+const hash = "L?H..]S5Rjaz?wR+f5fkIVV@t7fQ";
 
 render(html`
   <h2>This is a &lt;blurhash-img&gt;</h2>
