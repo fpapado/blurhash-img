@@ -14,6 +14,9 @@ Install the component:
 npm install blurhash-img
 ```
 
+As a Web Component, you must decide when to register it.
+Refer to the "Registering with ..." sections below for how to do that.
+
 ### Using in HTML
 
 You can set the `hash` attribute in HTML.
@@ -35,19 +38,32 @@ You can set the `hash` attribute in HTML.
 ```
 -->
 ```html
-<blurhash-img hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"></blurhash-img>
+<blurhash-img 
+  hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"
+  style="--aspect-ratio: 4/6">
+</blurhash-img>
 ```
 
-Note that by default blurhash-img fills the width and height of the container, so you must set a width and height via CSS.
+Note that by default blurhash-img needs an aspect ratio to hold its place in the layout, and scale correctly. This makes it similar to how images behave, after they have been replaced.
+
+You set the layout via the `--aspect-ratio` custom property.
+
+You can do this via CSS selectors:
 
 ```css
 blurhash-img {
-  width: 600px;
-  height: 400px;
+  --aspect-ratio: 4/6;
 }
 ```
 
-As a Web Component, you must decide when to register it.
+Or via the inline `style` attribute:
+
+```html
+<blurhash-img 
+  hash="L?H..]S5Rjaz?wR+f5fkIVV@t7fQ"
+  style="--aspect-ratio: 4/6">
+</blurhash-img>
+```
 
 ### Registering with HTML script tags
 

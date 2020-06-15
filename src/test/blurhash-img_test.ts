@@ -17,7 +17,6 @@ suite('blurhash-img', () => {
       el,
       `<div class="wrapper">
         <canvas
-          id="canvas"
           width="32"
           height="32"
         ></canvas>

@@ -11,26 +11,29 @@ import {decode} from '@fpapado/blurhash';
 @customElement('blurhash-img')
 export class BlurhashImg extends LitElement {
   /* Layout notes:
-   * Behaves similarly to a blockified image, where you set
-   * the width and height via CSS, right on the host.
-   * This is useful if you want to do further optimisations,
-   * such as placing blurhash-img inside an aspect ratio container.
+   * Images keep their aspect ratio after they are replaced.
+   * To make the layout of this component analogous, we use an
+   * --aspect-ratio CSS Custom Property.
    */
   static styles = css`
     :host {
       display: block;
+      max-width: 100%;
     }
 
     .wrapper {
-      display: block;
       position: relative;
-      width: 100%;
-      height: 100%;
+      height: 0;
+      padding-bottom: calc(var(--aspect-ratio) * 100%);
     }
 
-    #canvas {
+    canvas {
       position: absolute;
       inset: 0px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       width: 100%;
       height: 100%;
     }
@@ -96,7 +99,6 @@ export class BlurhashImg extends LitElement {
     return html`
       <div class="wrapper">
         <canvas
-          id="canvas"
           width="${this.resolutionX}"
           height="${this.resolutionY}"
         ></canvas>
