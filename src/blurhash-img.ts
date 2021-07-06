@@ -24,7 +24,7 @@ export class BlurhashImg extends LitElement {
     .wrapper {
       position: relative;
       height: 0;
-      padding-bottom: calc(var(--aspect-ratio) * 100%);
+      padding-bottom: calc(100% / (var(--aspect-ratio)));
     }
 
     canvas {
